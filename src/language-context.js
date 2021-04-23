@@ -4,10 +4,12 @@ export const LanguageContext = createContext();
 
 export function LocalisationProvider({ children }) {
   const hindi = {
+    lang: "hindi",
     appTitle: "ईकॉमर्स"
   };
 
   const english = {
+    lang: "english",
     appTitle: "eCommerce"
   };
 

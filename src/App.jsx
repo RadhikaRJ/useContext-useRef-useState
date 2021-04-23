@@ -130,16 +130,7 @@ export default function App() {
   // console.log({ currentTheme });
   // console.log({ currentLanguage });
   const [themeName, setThemename] = useState("light");
-  const [language, setLang] = useState("english");
-  function handleLanguageSwitch() {
-    if (language === "english") {
-      setLanguage("hindi");
-      setLang("hindi");
-    } else {
-      setLanguage("english");
-      setLang("english");
-    }
-  }
+
   function handleToggle() {
     if (themeName === "light") {
       changeTheme("dark");
@@ -155,7 +146,14 @@ export default function App() {
       <button style={{ float: "right" }} onClick={handleToggle}>
         ToggleMode
       </button>
-      <button style={{ float: "left" }} onClick={handleLanguageSwitch}>
+      <button
+        style={{ float: "left" }}
+        onClick={() =>
+          currentLanguage.lang === "english"
+            ? setLanguage("hindi")
+            : setLanguage("english")
+        }
+      >
         Switch Language
       </button>
       <br></br>
